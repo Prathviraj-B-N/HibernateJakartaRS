@@ -5,13 +5,15 @@
 
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://localhost:3306/IIITB?createDatabaseIfNotExist=true&amp;useSSL=false</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/ACADEMICERP?createDatabaseIfNotExist=true&amp;useSSL=false</property>
         <property name="connection.username">pishere</property>
         <property name="connection.password">Pishere@1</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="show_sql">true</property>
-<!--        <mapping class="com.example.restandhibernate.Bean.Department"/>-->
+        <mapping class="com.academicerp.backend.Bean.Domains"/>
+        <mapping class="com.academicerp.backend.Bean.Admin"/>
+        <mapping class="com.academicerp.backend.Bean.Student"/>
 
     </session-factory>
 </hibernate-configuration>
