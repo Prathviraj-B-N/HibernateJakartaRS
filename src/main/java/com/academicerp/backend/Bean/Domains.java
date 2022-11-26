@@ -8,7 +8,7 @@ public class Domains {
 
     public Domains(){}
 
-    public Domains(String program, String batch, String capacity, String qualification) {
+    public Domains(String program, String batch, Integer capacity, String qualification) {
         this.program = program;
         this.batch = batch;
         this.capacity = capacity;
@@ -26,7 +26,7 @@ public class Domains {
     String batch;
 
     @Column(nullable = false)
-    String capacity;
+    Integer capacity;
 
     @Column
     String qualification;
@@ -51,11 +51,11 @@ public class Domains {
         this.batch = batch;
     }
 
-    public String getCapacity() {
+    public Integer getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(String capacity) {
+    public void setCapacity(Integer capacity) {
         this.capacity = capacity;
     }
 

@@ -5,6 +5,9 @@ import com.academicerp.backend.Util.SessionUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 public class StudentDAO implements StudentDAOInterface {
 
@@ -26,8 +29,21 @@ public class StudentDAO implements StudentDAOInterface {
     }
 
     @Override
-    public String getStudent(Integer id) {
-        
-        return "";
+    public List<Student> getStudent(Integer id) {
+        try(Session session = SessionUtil.getSession()){
+            Transaction transaction = session.beginTransaction();
+            Query q=session.createQuery("from Student as s where s.domain_id.domainId=:id",Student.class);
+//            Query q=session.createQuery("from Student as s where  ",Student.class);
+
+            q.setParameter("id",id);
+            List<Student> list=q.list();
+            transaction.commit();
+            return list;
+
+        }
+        catch (HibernateException exception) {
+            System.out.println("Hibernate Exception");
+            return null;
+        }
     }
 }

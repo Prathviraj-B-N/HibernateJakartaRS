@@ -1,4 +1,11 @@
 package com.academicerp.backend.DAO.Interfaces;
+import com.academicerp.backend.Bean.Domains;
 
-public class DomainsDAOInterface {
+import java.util.List;
+
+public interface DomainsDAOInterface {
+    boolean addDomain(Domains d);
+    boolean updateDomian(Domains d);
+    List<Domains> getAllDomains();
+
 }
