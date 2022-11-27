@@ -22,15 +22,6 @@ public class StudentController {
         return "Hello, student!";
     }
 
-    @Path("/addStudent")
-    @GET
-    @Produces("text/plain")
-    public String hello1() {
-        Student s = new Student("MT2022170", "Prathviraj","B N","Prathviraj.b.n@gmail.com");
-        if(studentDAOobj.addStudent(s) == true) return "success!";
-        return "fail";
-    }
-
     @Path("/getStudent/{id}")
     @GET
     @Consumes(MediaType.APPLICATION_JSON)

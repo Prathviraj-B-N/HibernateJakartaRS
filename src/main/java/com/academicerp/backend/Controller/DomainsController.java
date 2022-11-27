@@ -34,20 +34,36 @@ public class DomainsController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response add(Domains d) throws URISyntaxException {
-        try(Session session = SessionUtil.getSession()){
-            Transaction transaction = session.beginTransaction();
-            session.persist(d);
-            transaction.commit();
-            session.close();
+        DomainsDAO dao = new DomainsDAO();
+        if(dao.addDomain(d)){
             Map<String,String> mp = new HashMap<>();
             mp.put("result", "Success");
             return Response.status(Response.Status.OK).entity(mp).build();
         }
-        catch (HibernateException exception) {
-            System.out.println("Hibernate Exception");
-            System.out.print(exception.getLocalizedMessage());
+        else{
             Map<String,String> mp = new HashMap<>();
             mp.put("result", "fail");
+            return Response.status(203).entity(mp).build();
+        }
+    }
+
+    @POST
+    @Path("/update/{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response update(Domains d,@PathParam("id") final Integer id) throws URISyntaxException {
+        DomainsDAO dao = new DomainsDAO();
+        if(dao.updateDomian(d,id)){
+            Map<String,Object> mp = new HashMap<>();
+            mp.put("result", "Success");
+            mp.put("updatedDomain", d);
+
+            return Response.status(Response.Status.OK).entity(mp).build();
+        }
+        else{
+            Map<String,String> mp = new HashMap<>();
+            mp.put("result", "fail");
+            mp.put("input", d.toString());
             return Response.status(203).entity(mp).build();
         }
     }

@@ -63,6 +63,17 @@ public class Domains {
         return qualification;
     }
 
+    @Override
+    public String toString() {
+        return "{" +
+                "domainId : " + domainId +
+                ", program:\"" + program + '"' +
+                ", batch:\"" + batch + '"' +
+                ", capacity:" + capacity +
+                ", qualification:\"" + qualification + '"' +
+                '}';
+    }
+
     public void setQualification(String qualification) {
         this.qualification = qualification;
     }

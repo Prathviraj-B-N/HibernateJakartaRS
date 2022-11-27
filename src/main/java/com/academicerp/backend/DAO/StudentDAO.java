@@ -33,7 +33,6 @@ public class StudentDAO implements StudentDAOInterface {
         try(Session session = SessionUtil.getSession()){
             Transaction transaction = session.beginTransaction();
             Query q=session.createQuery("from Student as s where s.domain_id.domainId=:id",Student.class);
-//            Query q=session.createQuery("from Student as s where  ",Student.class);
 
             q.setParameter("id",id);
             List<Student> list=q.list();
