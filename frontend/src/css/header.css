@@ -1,0 +1,29 @@
+.headerzdiv > ul{
+
+    background-color: #22A39F;
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.headerzdiv > ul > li {
+    all: unset;
+    padding :15px 5px 15px 5px ;
+    margin: 15px;
+    font-weight: bold;
+    font-size: x-large;
+    height: 100%;
+    border-radius: 3px;
+    
+}
+
+.headerzdiv > ul > li:hover{
+    background-color: rgb(250, 221, 184);
+    color: rgb(236, 53, 53);
+    transition: all;
+    transition-timing-function: ease-in;
+    transition-duration: 500ms;
+    cursor: pointer;
+}

@@ -1,0 +1,98 @@
+.bodySections{
+    height: 100%;
+}
+
+.bodySections > ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bodySections > ul >li {
+outline-style: groove;
+width: -webkit-fill-available;
+display: flex;
+justify-content: center;
+padding: 4px 8px;
+margin: 4px 8px;
+border-radius: 15px;
+}
+
+.bodySections > form > input[type=text]{
+    border-radius: 250px;
+    margin: 5px 5px;
+    height: 70%;
+    width: 70%;
+    padding-left: 15px;
+
+}
+
+.bodySections > form > button[type=button]{
+    background-color: aliceblue;
+    border-radius: 250px;
+    height: 70%;
+    width: 20%;
+    border: none;
+    cursor: pointer;
+}
+.bodySections > form > button[type=button]:hover{
+    border-radius: 250px;
+    margin: 5px 5px;
+    height: 70%;
+    width: 20%;
+    background-color: rgb(255 235 235);
+    border-style: solid;
+}
+
+.DisplayDomains{
+    height: 25%;
+    overflow-y: auto;
+    width: 90%;
+    border-style: solid;
+    border-radius: inherit;
+    padding: 16px;
+}
+
+.domainElement{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.spanDomian{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 95%;
+}
+
+.studentElement{
+    height: 60%;
+    overflow-y: auto;
+    width: 90%;
+    border-style: solid;
+    border-radius: inherit;
+    padding: 5px;
+}
+
+.studentCard > li{
+    all: unset;
+}
+
+.studentCard{
+    background-color: #F3EFE0;
+    display: block;
+    margin: 25px;
+    gap: 0px;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-y: auto;
+    cursor: pointer;
+}
+
+.studentDisplay{
+    overflow-y: auto;
+    height: 90%;
+    width: -webkit-fill-available;
+}

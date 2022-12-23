@@ -1,0 +1,19 @@
+.body{
+    display: flex;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.body > .bodySections {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 15px;
+    background-color: #434242;
+    height: 85%;
+    width: 100%;
+    outline: 1px;
+    border-style: solid;
+}

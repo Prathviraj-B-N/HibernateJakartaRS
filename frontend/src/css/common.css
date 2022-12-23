@@ -1,0 +1,67 @@
+*, *::after, *::before {
+    box-sizing: border-box;  
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+html {
+    background-color: #222222;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+ }
+ 
+ body {
+    margin: 0px;
+    min-height: 100%;
+    width: 100%;
+ }
+
+ /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  /* * {
+    scrollbar-width: auto;
+    scrollbar-color: #241d25 #404040;
+  } */
+
+h1 {
+  background-color: #22A39F;
+  width: 100%;
+  text-align: center;
+  padding: 5px 5px;
+}
+
+  *::-webkit-scrollbar-thumb {
+    border: 1px solid #ffffff;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+
+  }
+ 
+ ::-webkit-scrollbar-track {
+  max-height: 50%; height: 50%;
+   border-radius: 250px;
+ }
+ 
+ ::-webkit-scrollbar-thumb {
+   background: rgb(0, 0, 0);
+   border-radius: 5px;
+ }
+ 
+ ::-webkit-scrollbar-thumb:hover {
+   background: #555;
+ }
+
+ .wrapper::-webkit-scrollbar-thumb {
+  max-height: 20%;
+  height: 20%;
+}
+
+.maindiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
