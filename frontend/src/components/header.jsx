@@ -1,16 +1,14 @@
 import '../css/header.css'
 
-export default function Header(props){
-    let showLogout = <></>
-    if(props.login === true) 
-        showLogout = <li onClick={() => props.setlogin(false)}>Logout</li>
+export default function Header({login , setlogin}){
+    
     return(
     <div className='headerzdiv'>
         <ul>
             <li>
                 Academic ERP
             </li>
-            {showLogout}
+            {login ? (<li onClick={() => setlogin(false)}>Logout</li>) : null}
             
          </ul>
     </div> );

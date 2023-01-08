@@ -1,9 +1,7 @@
-import "./body/AddDomain";
 import ModifyDomian from "./body/ModifyDomain";
 import AddDomain from "./body/AddDomain";
 import ListStudents from "./body/ListStudents";
 
-import "./body/ListStudents";
 import "../css/body.css";
 
 import { useState, useEffect } from "react";

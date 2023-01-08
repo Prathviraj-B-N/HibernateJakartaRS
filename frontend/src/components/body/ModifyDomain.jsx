@@ -98,7 +98,7 @@ export default function ModifyDomian(props) {
           >
             {props.domainList.length <= 0 && (
               <option key="default" value="default">
-                <>Loading...</>
+                  Loading...
               </option>
             )}
             {props.domainList.length > 0 &&
