@@ -29,7 +29,7 @@ export default function AddDomain() {
         requestOptions
       );
       const data = await response.json();
-      if (data["result"] === "Success") {
+      if (data.result === "Success") {
         setProgram("");
         setBatch("");
         setCapacity("");

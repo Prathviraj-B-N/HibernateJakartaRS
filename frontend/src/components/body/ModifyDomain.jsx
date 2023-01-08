@@ -12,11 +12,11 @@ export default function ModifyDomian(props) {
   async function handleDropdown(e) {
     if (e.target.value !== "default") {
       let json = JSON.parse(e.target.value);
-      setProgram(json["program"]);
-      setBatch(json["batch"]);
-      setCapacity(json["capacity"]);
-      setQualification(json["qualification"]);
-      setDomainId(json["domain_id"])
+      setProgram(json.program);
+      setBatch(json.batch);
+      setCapacity(json.capacity);
+      setQualification(json.qualification);
+      setDomainId(json.domain_id)
     }
   }
 
@@ -39,7 +39,7 @@ export default function ModifyDomian(props) {
         requestOptions
       );
       const data = await response.json();
-      if (data["result"] === "Success") {
+      if (data.result === "Success") {
         setProgram("");
         setBatch("");
         setCapacity("");
@@ -56,9 +56,9 @@ export default function ModifyDomian(props) {
         });
 
         // update domain list
-          let resultJson = data['updatedDomain']
+          let resultJson = data.updatedDomain
           const newData = props.domainList.filter(value => { return value.domain_id !== domainId});
-          resultJson["domain_id"] = domainId
+          resultJson.domain_id = domainId
           newData.push(resultJson);
           props.setDomain(newData);
           setDomainId(undefined)

@@ -4,15 +4,13 @@ import "../../css/listStudents.css";
 import Student from "../Student";
 
 export default function ListStudents(props) {
-  const [domainInput, setDomainInput] = useState("");
+
   const [studentList, setStudentList] = useState([]);
-  const [program, setProgram] = useState("");
-  const [batch, setBatch] = useState("");
 
   function handleGetStudents(e) {
     e.preventDefault();
     if (e.target.value !== "default") {
-      fetch(`http://localhost:8080/student/getStudent/` + JSON.parse(e.target.value)["domain_id"])
+      fetch(`http://localhost:8080/student/getStudent/` + JSON.parse(e.target.value).domain_id)
         .then((response) => {
           if (!response.ok) {
             throw new Error(
@@ -24,7 +22,7 @@ export default function ListStudents(props) {
         .then((actualData) => {
           setStudentList(JSON.parse(actualData));
         })
-        .catch((err) => {
+        .catch(() => {
           toast.warn('Invalid Input!', {
             position: "bottom-right",
             autoClose: 2000,
