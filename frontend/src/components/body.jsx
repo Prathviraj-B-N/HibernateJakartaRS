@@ -1,7 +1,4 @@
-import ModifyDomian from "./body/ModifyDomain";
-import AddDomain from "./body/AddDomain";
-import ListStudents from "./body/ListStudents";
-
+import {ModifyDomian,AddDomain,ListStudents} from './bodyItems'
 import "../css/body.css";
 
 import { useState, useEffect } from "react";

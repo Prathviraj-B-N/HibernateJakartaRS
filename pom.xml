@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.academicERP</groupId>
-    <artifactId>backend</artifactId>
+    <artifactId>HibernateJakartaRS</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>backend</name>
+    <name>HibernateJakartaRS</name>
     <packaging>war</packaging>
 
     <properties>

@@ -57,7 +57,7 @@ const ListStudents = (props) => {
     <form>
           <select
             id="Domains"
-            name='program batch"
+            name='program batch'
             onClick={(e) => {
               handleGetStudents(e);
             }}
