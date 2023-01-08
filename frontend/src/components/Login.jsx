@@ -22,7 +22,7 @@ export default function Login(props){
               requestOptions
             );
             const data = await response.json();
-            console.log(data);
+            
             if (data === true) {
                 setUsername("");
                 setPassword("");
