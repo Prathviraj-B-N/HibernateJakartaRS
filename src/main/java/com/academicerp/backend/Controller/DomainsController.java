@@ -1,17 +1,10 @@
 package com.academicerp.backend.Controller;
-
-import com.academicerp.backend.Util.SessionUtil;
 import jakarta.ws.rs.*;
 
 import com.academicerp.backend.DAO.DomainsDAO;
 import com.academicerp.backend.Bean.Domains;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-
-import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,7 +26,7 @@ public class DomainsController {
     @Path("/add")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response add(Domains d) throws URISyntaxException {
+    public Response add(Domains d) {
         DomainsDAO dao = new DomainsDAO();
         if(dao.addDomain(d)){
             Map<String,String> mp = new HashMap<>();
@@ -51,7 +44,7 @@ public class DomainsController {
     @Path("/update/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response update(Domains d,@PathParam("id") final Integer id) throws URISyntaxException {
+    public Response update(Domains d,@PathParam("id") final Integer id) {
         DomainsDAO dao = new DomainsDAO();
         if(dao.updateDomian(d,id)){
             Map<String,Object> mp = new HashMap<>();

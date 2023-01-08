@@ -10,13 +10,13 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 @Path("/login")
-public class loginController {
+public class LoginController {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response login(Admin a){
         AdminDAO adao = new AdminDAO();
-        if(adao.handleLogin(a) == true) return Response.ok().entity("true").build();
+        if(adao.handleLogin(a)) return Response.ok().entity("true").build();
         return Response.ok().entity("false").build();
     }
 }

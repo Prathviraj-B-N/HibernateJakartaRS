@@ -8,11 +8,20 @@ public class Domains {
 
     public Domains(){}
 
-    public Domains(String program, String batch, Integer capacity, String qualification) {
+    public Integer getDomainId() {
+        return domainId;
+    }
+
+    public Domains(Integer domainId, String program, String batch, Integer capacity, String qualification) {
+        this.domainId = domainId;
         this.program = program;
         this.batch = batch;
         this.capacity = capacity;
         this.qualification = qualification;
+    }
+
+    public void setDomainId(Integer domainId) {
+        this.domainId = domainId;
     }
 
     @Id

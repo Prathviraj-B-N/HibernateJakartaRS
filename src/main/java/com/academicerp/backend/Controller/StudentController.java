@@ -7,6 +7,7 @@ import com.academicerp.backend.DAO.StudentDAO;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import java.util.Collections;
 import java.util.List;
 
 @Path("/student")
@@ -28,7 +29,7 @@ public class StudentController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getStudent(@PathParam("id") final Integer id) {
         List<Student> s = studentDAOobj.getStudent(id);
-        if(s == null) Response.noContent().build();
+        if(s.size() == 0) Response.noContent().build();
         return Response.ok().entity(s).build();
     }
 }

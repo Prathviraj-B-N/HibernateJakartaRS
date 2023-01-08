@@ -8,7 +8,12 @@ public class Admin {
 
     public Admin(){}
 
-    public Admin(String username, String password) {
+    public void setAdminId(Integer adminId) {
+        this.adminId = adminId;
+    }
+
+    public Admin(Integer adminId, String username, String password) {
+        this.adminId = adminId;
         this.username = username;
         this.password = password;
     }

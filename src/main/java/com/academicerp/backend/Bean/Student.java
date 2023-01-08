@@ -8,13 +8,22 @@ public class Student {
 
     public Student() {    }
 
-    public Student(String rollNumber, String firstName, String lastName, String email) {
+    public Student(Integer studentId, String rollNumber, String firstName, String lastName, String email, Domains domain_id) {
+        this.studentId = studentId;
         this.rollNumber = rollNumber;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.domain_id = domain_id;
     }
 
+    public Domains getDomain_id() {
+        return domain_id;
+    }
+
+    public void setDomain_id(Domains domain_id) {
+        this.domain_id = domain_id;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

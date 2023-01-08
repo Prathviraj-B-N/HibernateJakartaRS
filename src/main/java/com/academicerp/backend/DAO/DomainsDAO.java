@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.util.Collections;
 import java.util.List;
 
 public class DomainsDAO implements DomainsDAOInterface {
@@ -62,7 +63,7 @@ public class DomainsDAO implements DomainsDAOInterface {
         }
         catch (HibernateException exception) {
             System.out.println("Hibernate Exception");
-            return null;
+            return Collections.emptyList();
         }
     }
 }

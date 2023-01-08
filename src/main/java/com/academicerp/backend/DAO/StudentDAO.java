@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.util.Collections;
 import java.util.List;
 
 public class StudentDAO implements StudentDAOInterface {
@@ -42,7 +43,7 @@ public class StudentDAO implements StudentDAOInterface {
         }
         catch (HibernateException exception) {
             System.out.println("Hibernate Exception");
-            return null;
+            return Collections.emptyList();
         }
     }
 }
